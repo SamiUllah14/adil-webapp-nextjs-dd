@@ -1,0 +1,28 @@
+.scrolling-message-container {
+  width: 100%;
+  overflow: hidden;
+  height: 20%;
+  background-color: #f8f9fa; /* Optional background color */
+  position: relative;
+}
+
+.scrolling-message {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%; /* Extra space for smooth scrolling */
+  animation: scroll-left 80s linear infinite;
+  font-size: 1rem;
+  color: #00bf63; /* Text color */
+  will-change: transform; /* Optimize performance */
+  animation-delay: 0s; /* Ensure no delay in animation start */
+}
+
+/* Keyframes for scrolling from right to left */
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

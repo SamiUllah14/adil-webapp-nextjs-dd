@@ -1,0 +1,40 @@
+
+.cardboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Default for larger screens */
+    width: 100%;
+    height: fit-content;
+    justify-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #00bf63;
+    border-radius: 20px;
+}
+
+
+.viewMoreCategoriesLink{
+    text-decoration: none;
+    color: #3D6098;
+    font-size: 1rem;
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+
+}
+.titlebox {
+    display: flex;
+    height: fit-content;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #fff; /* Optional: background for title */
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .cardboxes {
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for mobile devices */
+    }
+}
