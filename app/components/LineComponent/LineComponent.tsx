@@ -6,7 +6,7 @@ const LineComponent = ({ text = 'Explore By Categories' }) => {
     <div className="flex items-center justify-center">
       <div className="flex items-center w-full">
         <div className="flex-grow border-t border-black"></div>
-        <span className="mx-4 text-black font-roboto font-bold">{text}</span>
+        <span className="mx-5 text-black font-roboto font-bold">{text}</span>
         <div className="flex-grow border-t border-black"></div>
       </div>
     </div>

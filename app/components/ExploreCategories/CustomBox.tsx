@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './CustomFeatureBox.css';
-import CardFeature from '../CardFeature/CardFeature';
+import CardFeature from '../Cards/CardCategory/CardFeature';
 import { HiArrowRight } from 'react-icons/hi'; // Import the right arrow icon
 import LineComponent from '../LineComponent/LineComponent';
 
@@ -29,7 +29,7 @@ const CustomFeatureBox = () => {
 
   return (
     <>
-    <div className='mb-10'>
+    <div className='mb-5'>
     <LineComponent text="Explore Categories" />
     </div>
  
