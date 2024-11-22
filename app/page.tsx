@@ -2,7 +2,6 @@ import AllProducts from "./components/AllProducts/AllProducts";
 import Banner from "./components/Banner/Banner";
 import CustomFeatureBox from "./components/ExploreCategories/CustomBox";
 import HomeBlogComp from "./components/HomeBlogComp/HomeBlogComp";
-import LineComponent from "./components/LineComponent/LineComponent";
 import Testimonials from "./components/Testimonials/Testimonials";
 import TopSellingProducts from "./components/TopSellingProducts/TopSellingProducts";
 
@@ -19,7 +18,8 @@ export default function Home() {
         <CustomFeatureBox />
 
       </div>
-      <div className="mt-20 lg:mt-20 md:mt-20">      <TopSellingProducts />
+      <div className="mt-20 lg:mt-20 md:mt-20">    
+        <TopSellingProducts />
 
       </div>
     </div>
@@ -36,14 +36,7 @@ export default function Home() {
 
 </div>
 
-
-
-
-
-
       </>
-
-
 
   );
 }

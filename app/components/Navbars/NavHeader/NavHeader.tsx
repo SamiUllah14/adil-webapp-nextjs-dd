@@ -19,13 +19,15 @@ const NavHeader = () => {
     <>
       <Sidebar isOpen={isSidebarOpen} closeSidebar={closeSidebar} /> {/* Sidebar component */}
       <nav className="header fixed top-0 left-0 w-full flex items-center py-4 px-8 border-b bg-white z-40 justify-between md:justify-evenly">
-        <div className="flex items-center">
+        {/* Clickable Adil Pharmacy Section */}
+        <Link href="/" className="flex items-center">
           <img src="https://placehold.co/50x50" alt="Adil Pharmacy logo" className="mr-2" />
           <div>
             <h1 className="text-xl font-bold text-green-700">Adil Pharmacy</h1>
             <p className="text-sm text-gray-500">wellness for life</p>
           </div>
-        </div>
+        </Link>
+
         <div className="hidden lg:flex items-center">
           <div className="relative w-96">
             <input
@@ -37,17 +39,16 @@ const NavHeader = () => {
             </button>
           </div>
         </div>
+
         <div className="flex items-center">
           <div className="hidden lg:flex items-center mr-4">
             <i className="fas fa-user text-xl"></i>
             <div className="ml-2">
-              {/* Replace anchor tags with Link components */}
               <Link href="/Login" className="text-blue-600">Login</Link> or 
               <Link href="/Register" className="text-blue-600"> Register</Link>
               <p className="text-sm text-gray-500">Wellness Account</p>
             </div>
           </div>
-          {/* Update the Link to trigger openSidebar */}
           <div className="flex items-center cursor-pointer" onClick={openSidebar}>
             <FaShoppingCart className="text-xl text-gray-500" />
             <span className="ml-1 text-sm">0</span>

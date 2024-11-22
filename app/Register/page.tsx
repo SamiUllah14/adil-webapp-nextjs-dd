@@ -1,10 +1,12 @@
 import React from 'react';
+import CustomButton from '../components/CustomButton/CustomButton';
+import CustomInputField from '../components/CustomInputField/CustomInputField'; // Import the CustomInputField component
+import Link from 'next/link';  // Import Link from next/link
 
 const Register = () => {
   return (
-    <div className="bg-[#D6EDEB] flex justify-center items-center min-h-screen">
+    <div className="bg-[#D6EDEB] flex justify-center items-center pt-10 pb-10">
       <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center justify-between w-full max-w-4xl">
-        {/* Right Side - Image */}
         <div className="w-full lg:w-1/3 mb-6 lg:mb-0">
           <img
             src="https://placehold.co/400x400"
@@ -20,35 +22,32 @@ const Register = () => {
             We will use this information to contact you regarding booking confirmations.
           </p>
           <form>
-            <div className="mb-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1A202C]"
-              />
+            <CustomInputField 
+              type="text" 
+              placeholder="Your Name" 
+            />
+            <CustomInputField 
+              type="text" 
+              placeholder="Your Home Address" 
+            />
+            <CustomInputField 
+              type="number" 
+              placeholder="Mobile Number" 
+            />
+            <CustomInputField 
+              type="password" 
+              placeholder="Password" 
+            />
+
+            <div className='justify-end flex'>
+              <CustomButton text={'Register'} href={'#'} />
             </div>
-            <div className="mb-4 flex">
-              <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-100 text-gray-600">
-                +92
-              </span>
-              <input
-                type="text"
-                placeholder="Mobile Number"
-                className="w-full p-3 rounded-r-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1A202C]"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#1A202C] text-white p-3 rounded-lg font-bold"
-            >
-              Continue
-            </button>
           </form>
           <p className="mt-4 text-[#1A202C]">
             Already a user?{' '}
-            <a href="#" className="text-[#1A202C] underline">
+            <Link href="/Login" className="text-[#1A202C] underline">
               Login
-            </a>
+            </Link>
           </p>
         </div>
       </div>
