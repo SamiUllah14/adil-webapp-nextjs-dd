@@ -1,23 +1,40 @@
-# Use the official Node.js image as the base image
-FROM node:22.11.0
-
-# Set the working directory in the container
+# Build stage
+FROM node:22.11.0-slim AS builder
 WORKDIR /app
 
-# Copy only package.json and package-lock.json to leverage Docker caching
-COPY package*.json ./
-
 # Install dependencies
-RUN npm install
+COPY package*.json ./
+RUN npm ci
 
-# Copy the rest of the application files (after installing dependencies)
+# Copy source code
 COPY . .
 
-# Expose the port the app runs on (default is 3000 for development mode)
+# Set production environment and build
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+RUN npm run build
+
+# Production stage
+FROM node:22.11.0-slim AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV PORT 3000
+
+# Create non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy the built files and dependencies
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Switch to non-root user
+USER nextjs
+
+# Expose the application port
 EXPOSE 3000
 
-# Use development environment
-ENV NODE_ENV=development
-
-# Command to start the application in development mode
-CMD ["npm", "run", "dev"]
+# Start the Next.js app
+CMD ["node", "server.js"]

@@ -80,9 +80,9 @@ const Testimonials: React.FC = () => {
                     </div>
                   </div>
                   <p className="text-sm leading-tight italic">
-                    <span className="text-lg font-bold text-gray-400 mr-1">"</span>
+                    <span className="text-lg font-bold text-gray-400 mr-1">&ldquo;</span>
                     {testimonial.quote}
-                    <span className="text-lg font-bold text-gray-400 ml-1">"</span>
+                    <span className="text-lg font-bold text-gray-400 ml-1">&ldquo;</span>
                   </p>
                 </div>
               </div>
