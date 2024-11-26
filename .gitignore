@@ -9,10 +9,8 @@
 # testing
 /coverage
 
-# Ignore Next.js build files only if they're not required for deployment
-# Comment these lines out during deployment
-# /.next/
-# /out/
+# next.js
+/out/
 
 # production
 /build

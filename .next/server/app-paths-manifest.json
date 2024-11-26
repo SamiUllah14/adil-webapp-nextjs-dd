@@ -1,8 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/Register/page": "app/Register/page.js",
-  "/ResetPassword/page": "app/ResetPassword/page.js",
-  "/Login/page": "app/Login/page.js"
+  "/Login/page": "app/Login/page.js",
+  "/page": "app/page.js",
+  "/ResetPassword/page": "app/ResetPassword/page.js"
 }
