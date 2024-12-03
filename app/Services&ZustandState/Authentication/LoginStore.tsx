@@ -18,7 +18,7 @@ const useLoginStore = create<LoginState>((set) => ({
   login: async () => {
     try {
       const { mobileNumber, password } = useLoginStore.getState();
-      const response = await axios.post('http://localhost:5151/api/person/login', {
+      const response = await axios.post('http://139.59.75.99:5151/api/person/login', {
         mobileNumber,
         password,
       });

@@ -18,7 +18,7 @@ const useResetPasswordStore = create<ResetPasswordState>((set) => ({
   resetPassword: async () => {
     try {
       const { name, newPassword } = useResetPasswordStore.getState();
-      const response = await axios.post('http://localhost:5151/api/person/reset-password', {
+      const response = await axios.post('http://139.59.75.99:5151/api/person/reset-password', {
         name,
         newPassword,
       });

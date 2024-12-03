@@ -26,7 +26,7 @@ const useRegisterStore = create<RegisterState>((set) => ({
   register: async () => {
     try {
       const { name, address, mobileNumber, password } = useRegisterStore.getState();
-      const response = await axios.post('http://localhost:5151/api/person', {
+      const response = await axios.post('http://139.59.75.99:5151/api/person', {
         name,
         address,
         mobileNumber,
